@@ -254,4 +254,5 @@ Los siguientes proyectos ampliarán el portafolio hacia análisis deportivos, un
 **Fausto Xavier De León Pichardo**
 
 Estudiante de Ingeniería en Sistemas de Computación, orientado al desarrollo de proyectos en **Data Analytics, Data Engineering y Business Intelligence**.
-**Linkedin: https://www.linkedin.com/in/fausto-xavier-de-leon-pichardo-bi2026/
+
+**Linkedin: https://www.linkedin.com/in/fausto-xavier-de-leon-pichardo-bi2026/**
