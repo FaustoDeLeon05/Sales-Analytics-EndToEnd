@@ -230,7 +230,7 @@ Abrir `Reports/Dashboard.pbix` con Power BI Desktop y actualizar las fuentes de 
 
 ## 📊 Resultado
 
-El proyecto finaliza con un dashboard de análisis de **ventas y gastos**, permitiendo transformar datos operativos en información útil para evaluar desempeño comercial, evolución de ventas, vendedores, productos y gastos, haciendo usos de los filtros y slicers.
+El proyecto finaliza con un dashboard de análisis de **ventas y gastos**, permitiendo transformar datos operativos en información útil para evaluar desempeño comercial, evolución de ventas, vendedores, productos y gastos, haciendo uso de los filtros y slicers.
 
 ## 🔐 Buenas prácticas aplicadas
 
