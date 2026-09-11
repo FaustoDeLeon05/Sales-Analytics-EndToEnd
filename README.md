@@ -230,7 +230,7 @@ Abrir `Reports/Dashboard.pbix` con Power BI Desktop y actualizar las fuentes de 
 
 ## 📊 Resultado
 
-El proyecto finaliza con un dashboard de análisis de **ventas y gastos**, permitiendo transformar datos operativos en información útil para evaluar desempeño comercial, evolución de ventas, vendedores, productos y gastos.
+El proyecto finaliza con un dashboard de análisis de **ventas y gastos**, permitiendo transformar datos operativos en información útil para evaluar desempeño comercial, evolución de ventas, vendedores, productos y gastos, haciendo usos de los filtros y slicers.
 
 ## 🔐 Buenas prácticas aplicadas
 
@@ -247,10 +247,11 @@ Este proyecto representa la primera pieza de una serie de proyectos **End-to-End
 
 **Data Engineering · Data Analytics · SQL · Python · Power BI · ETL · Data Quality**
 
-Los siguientes proyectos ampliarán el portafolio hacia análisis deportivos, desarrollo de un sitio profesional mediante GitHub Pages y un proyecto de analítica para un **BPO / Contact Center**.
+Los siguientes proyectos ampliarán el portafolio hacia análisis deportivos, un proyecto de analítica para un **BPO / Contact Center** y desarrollo de un sitio profesional mediante GitHub Pages.
 
 ## 👤 Autor
 
 **Fausto Xavier De León Pichardo**
 
 Estudiante de Ingeniería en Sistemas de Computación, orientado al desarrollo de proyectos en **Data Analytics, Data Engineering y Business Intelligence**.
+**Linkedin: https://www.linkedin.com/in/fausto-xavier-de-leon-pichardo-bi2026/
