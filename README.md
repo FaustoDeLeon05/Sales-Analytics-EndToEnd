@@ -8,7 +8,7 @@ El proyecto integra **Python, SQL Server y Power BI** en un proceso reproducible
   <img width="1917" height="1197" alt="Dashboard de Ventas y Gastos" src="https://github.com/user-attachments/assets/93bbf681-8d82-446c-a5a7-ce7f978b8b72" />
 </p>
 
-## 📌 Descripción del proyecto
+## Descripción del proyecto
 
 El objetivo es transformar datos operativos de **ventas y gastos** en información estructurada y utilizable para análisis de negocio.
 
@@ -18,7 +18,7 @@ El flujo implementado es:
 
 El pipeline automatiza la lectura de los datos, aplica reglas de calidad, carga la información en SQL Server y deja los datos preparados para consultas analíticas y visualización.
 
-## 🎯 Objetivos
+## Objetivos
 
 - Automatizar la preparación y carga de datos.
 - Aplicar validaciones de calidad antes de insertar información en la base de datos.
@@ -27,7 +27,7 @@ El pipeline automatiza la lectura de los datos, aplica reglas de calidad, carga 
 - Construir un dashboard interactivo para el seguimiento de ventas y gastos.
 - Documentar un flujo End-to-End reproducible como proyecto de portafolio.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 | Tecnología | Uso |
 |---|---|
@@ -40,7 +40,7 @@ El pipeline automatiza la lectura de los datos, aplica reglas de calidad, carga 
 | **Power BI** | Modelado, KPIs y visualización |
 | **Excel** | Fuente de datos del proceso |
 
-## 🔄 Flujo de datos
+## Flujo de datos
 
 ### 1. Extract — Extracción
 
@@ -86,7 +86,7 @@ Los scripts T-SQL permiten analizar diferentes dimensiones del negocio, entre el
 
 El resultado se utiliza en **Power BI** para construir un dashboard interactivo con indicadores y visualizaciones orientadas al análisis de ventas y gastos.
 
-## 🗄️ Modelo y base de datos
+## Modelo y base de datos
 
 La solución utiliza **SQL Server** como capa de almacenamiento y análisis intermedio.
 
@@ -115,7 +115,7 @@ GlobalSalesDB
     └── Total Gastos
 ```
 
-## 📁 Estructura del repositorio
+## Estructura del repositorio
 
 ```text
 Sales-Analytics-EndToEnd/
@@ -141,7 +141,7 @@ Sales-Analytics-EndToEnd/
 └── requirements.txt
 ```
 
-## ⚙️ Configuración y ejecución
+## Configuración y ejecución
 
 ### Requisitos
 
@@ -228,13 +228,13 @@ SQL/03_analysis_queries.sql
 
 Abrir `Reports/Dashboard.pbix` con Power BI Desktop y actualizar las fuentes de datos según la configuración local de SQL Server.
 
-## 📊 Resultado
+## Resultado
 
 El proyecto transforma datos operativos de ventas y gastos en información estructurada para apoyar el seguimiento del desempeño comercial. El dashboard permite analizar la evolución de las ventas, el rendimiento de vendedores y productos, los resultados por mercado y el comportamiento de los gastos mediante filtros y slicers interactivos.
 
 Desde una perspectiva de negocio, la solución facilita la identificación de tendencias, oportunidades y áreas que requieren atención, reduciendo la dependencia de análisis manuales y proporcionando una vista centralizada para la toma de decisiones.
 
-## 🔐 Buenas prácticas aplicadas
+## Buenas prácticas aplicadas
 
 - Variables de configuración separadas mediante `.env`.
 - Exclusión de credenciales y archivos locales mediante `.gitignore`.
@@ -243,7 +243,7 @@ Desde una perspectiva de negocio, la solución facilita la identificación de te
 - Uso de consultas SQL reutilizables para análisis.
 - Estructura de repositorio orientada a reproducibilidad y mantenimiento.
 
-## 🚀 Enfoque de portafolio
+## Enfoque de portafolio
 
 Este proyecto representa la primera pieza de una serie de proyectos **End-to-End** desarrollados para demostrar competencias prácticas en:
 
@@ -251,7 +251,7 @@ Este proyecto representa la primera pieza de una serie de proyectos **End-to-End
 
 Los siguientes proyectos ampliarán el portafolio hacia análisis deportivos, un proyecto de analítica para un **BPO / Contact Center** y desarrollo de un sitio profesional mediante GitHub Pages.
 
-## 👤 Autor
+## Autor
 
 **Fausto Xavier De León Pichardo**
 
