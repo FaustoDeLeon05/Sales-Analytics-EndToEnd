@@ -1,7 +1,4 @@
-# Sales Analytics End-to-End
-
-**Proyecto 1 — Data Analytics & Business Intelligence Portfolio**
-
+# Proyecto 1 - Sales Analytics End-to-End
 Pipeline completo de análisis de ventas que integra **Python, SQL Server y Power BI** para transformar datos de Excel en un modelo analítico y un dashboard interactivo orientado a la toma de decisiones.
 
 ## 📊 Dashboard
