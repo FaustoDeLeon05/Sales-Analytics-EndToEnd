@@ -1,11 +1,12 @@
-# Sales Analytics — End-to-End Data Pipeline
+# Proyecto 1 - Sales Analytics — End-to-End Data Pipeline
+Pipeline completo de análisis de ventas que integra **Python, SQL Server y Power BI** para transformar datos de Excel en un modelo analítico y un dashboard interactivo orientado a la toma de decisiones.
 
 Proyecto de portafolio orientado a **análisis e ingeniería de datos**, construido para demostrar un flujo completo desde la fuente de datos hasta un dashboard ejecutivo en Power BI.
 
 El proyecto integra **Python, SQL Server y Power BI** en un proceso reproducible de extracción, transformación, validación, carga y análisis.
 
 <p align="center">
-  <img width="1917" height="1197" alt="Dashboard de Ventas y Gastos" src="https://github.com/user-attachments/assets/93bbf681-8d82-446c-a5a7-ce7f978b8b72" />
+  <img width="1917" height="1197" alt="Dashboard de Ventas y Gastos" src="" />
 </p>
 
 ## Descripción del proyecto
@@ -15,17 +16,23 @@ El objetivo es transformar datos operativos de **ventas y gastos** en informaci�
 El flujo implementado es:
 
 **Excel → Python ETL → SQL Server → Power BI**
+### Vistas del reporte
 
 El pipeline automatiza la lectura de los datos, aplica reglas de calidad, carga la información en SQL Server y deja los datos preparados para consultas analíticas y visualización.
+El dashboard está compuesto por **6 páginas**, incluyendo una página dedicada a tooltips.
 
 ## Objetivos
 
 - Automatizar la preparación y carga de datos.
-- Aplicar validaciones de calidad antes de insertar información en la base de datos.
-- Centralizar los datos en SQL Server.
-- Crear consultas SQL orientadas al análisis comercial.
+- Variables de configuración separadas mediante `.env`.
+- Exclusión de credenciales y archivos locales mediante `.gitignore`.
+- Validaciones de calidad antes de la carga.
+- Separación entre código Python, scripts SQL, datos y reportes.
+- Uso de consultas SQL reutilizables para análisis.
 - Construir un dashboard interactivo para el seguimiento de ventas y gastos.
-- Documentar un flujo End-to-End reproducible como proyecto de portafolio.
+- Estructura de repositorio orientada a reproducibilidad y mantenimiento.
+El objetivo es demostrar un flujo **End-to-End de Data Analytics / Business Intelligence**, cubriendo desde la ingesta y validación de datos hasta el modelado, análisis y visualización final.
+
 
 ## Tecnologías utilizadas
 
@@ -50,37 +57,21 @@ Las fuentes principales corresponden a los datos de **ventas** y **gastos**.
 
 ### 2. Transform & Validate — Transformación y validación
 
-El script `Source/etl_pipeline.py` transforma los datos y ejecuta controles de calidad, incluyendo:
-
-- Validación de columnas requeridas.
-- Conversión y validación de fechas.
-- Validación de campos numéricos.
-- Detección de valores nulos críticos.
-- Detección de registros duplicados.
-- Validación de cantidades positivas.
-- Validación de precios y gastos no negativos.
-- Comprobación de la regla de negocio `Total Ventas = Cantidad vendida × Precio unitario`.
+El script `Source/etl_pipeline.py` transforma los datos y ejecuta controles de calidad.
 
 ### 3. Load — Carga
 
 Los datos validados se cargan en **SQL Server** utilizando SQLAlchemy y pyodbc.
+El reporte también incorpora **navegación entre páginas mediante bookmarks**, tooltips personalizados y seguridad a nivel de filas (**RLS**).
 
 El proceso trabaja con las tablas principales:
 
 - `dbo.Fact_Ventas`
-- `dbo.Dim_Gastos`
+- `dbo.Fact_Gastos`
 
 ### 4. Analyze — Análisis
 
-Los scripts T-SQL permiten analizar diferentes dimensiones del negocio, entre ellas:
-
-- Ventas por país de destino.
-- Productos con mayor facturación.
-- Ranking de productos por categoría.
-- Evolución mensual de ventas.
-- Rendimiento por vendedor.
-- Gastos por oficina y concepto.
-- Ranking mensual de vendedores.
+Los scripts T-SQL permiten analizar diferentes dimensiones del negocio.
 
 ### 5. Visualize — Visualización
 
@@ -88,173 +79,94 @@ El resultado se utiliza en **Power BI** para construir un dashboard interactivo 
 
 ## Modelo y base de datos
 
-La solución utiliza **SQL Server** como capa de almacenamiento y análisis intermedio.
+La solución utiliza **SQL Server** como capa de almacenamiento y análisis intermedio. La estructura SQL conserva las tablas utilizadas por el modelo actual del proyecto:
 
-La estructura SQL conserva las tablas utilizadas por el modelo actual del proyecto:
+##  Tecnologías
 
-```text
-GlobalSalesDB
-│
-├── Fact_Ventas
-│   ├── Fecha
-│   ├── País / destino
-│   ├── Ciudad de envío
-│   ├── Zona de seguimiento
-│   ├── Vendedor
-│   ├── Categoría de venta
-│   ├── Artículo de venta
-│   ├── Cantidad vendida
-│   ├── Meta de cantidad
-│   ├── Precio unitario
-│   └── Total Ventas
-│
-└── Dim_Gastos
-    ├── Fecha
-    ├── Oficina
-    ├── Concepto de gasto
-    └── Total Gastos
-```
+- **Python:** Pandas, SQLAlchemy, pyodbc
+- **SQL Server:** T-SQL, modelado relacional y consultas analíticas
+- **Power BI:** Power Query, DAX, modelo semántico, esquema de estrella y visualización
+- **Git/GitHub:** control de versiones y documentación del proyecto
 
-## Estructura del repositorio
+## Capa SQL
+Los scripts están separados por responsabilidad:
 
-```text
-Sales-Analytics-EndToEnd/
-│
-├── Data/
-│   └── Dataset - Prueba.xlsx
-│
-├── Reports/
-│   └── Dashboard.pbix
-│
-├── SQL/
-│   ├── 01_create_tables.sql
-│   ├── 02_load_validation.sql
-│   └── 03_analysis_queries.sql
-│
-├── Source/
-│   └── etl_pipeline.py
-│
-├── .env.example
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
-```
+- **01_create_tables.sql** — creación de las tablas necesarias.
+- **02_load_validation.sql** — consultas de validación de la carga.
+- **03_analysis_queries.sql** — consultas analíticas mediante T-SQL.
+Las consultas analíticas incluyen agregaciones, CTEs y funciones de ventana para explorar ventas y desempeño comercial.
 
-## Configuración y ejecución
+### Modelo semántico en Power BI
 
-### Requisitos
-
-Antes de ejecutar el proyecto se requiere:
-
-- Python 3.x
-- SQL Server
-- ODBC Driver para SQL Server
-- Power BI Desktop para visualizar el dashboard
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/FaustoDeLeon05/Sales-Analytics-EndToEnd.git
-cd Sales-Analytics-EndToEnd
-```
-
-### 2. Crear un entorno virtual
-
-```bash
-python -m venv .venv
-```
-
-Activación en Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-### 3. Instalar dependencias
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configurar la conexión
-
-Crear un archivo `.env` a partir de `.env.example` y configurar la instancia local de SQL Server.
-
-Ejemplo:
-
-```env
-EXCEL_PATH=Data/Dataset - Prueba.xlsx
-SQL_SERVER=YOUR_SQL_SERVER_INSTANCE
-SQL_DATABASE=GlobalSalesDB
-ODBC_DRIVER=ODBC Driver 17 for SQL Server
-```
-
-> El archivo `.env` no debe subirse al repositorio. Las credenciales y configuraciones locales deben mantenerse fuera del control de versiones.
-
-### 5. Crear las tablas
-
-Ejecutar en SQL Server Management Studio:
+El modelo utiliza una estructura orientada a análisis con una dimensión de fechas compartida:
 
 ```text
 SQL/01_create_tables.sql
+                 Dim_Fecha
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+     Fact_Ventas          Fact_Gastos
+          │
+          │
+       Usuarios
 ```
 
-### 6. Ejecutar el pipeline ETL
+### Elementos del reporte
+Elementos principales del modelo:
 
 Desde la raíz del proyecto:
+- `Dim_Fecha` como dimensión de fechas central.
+- `Fact_Ventas` para las transacciones comerciales.
+- `Fact_Gastos` como nombre utilizado dentro del modelo de Power BI para la tabla física `Dim_Gastos`.
+- `Usuarios` para el análisis y control de acceso por vendedor/supervisor.
+- Tabla `_Measures` para centralizar las medidas DAX.
 
-```bash
-python Source/etl_pipeline.py
-```
+## Métricas principales
 
-### 7. Validar los datos
+### Medidas
+Entre las medidas implementadas se encuentran:
 
-Ejecutar:
+- Ventas Totales
+- Unidades Vendidas
+- Meta de Unidades
+- Cumplimiento de Meta
+- Brecha de Meta
+- Ventas del Período Anterior
+- Variación de Ventas
+- Gastos Totales
+- Utilidad
+- Margen
+- % Gastos sobre Ventas
+- Precio Promedio
+- Venta Promedio por Vendedor
+- Total de Vendedores
+- Top Vendedor
 
-```text
-SQL/02_load_validation.sql
-```
+## Seguridad y navegación
 
-### 8. Ejecutar consultas analíticas
-
-Ejecutar:
-
-```text
-SQL/03_analysis_queries.sql
-```
-
-### 9. Abrir el dashboard
-
-Abrir `Reports/Dashboard.pbix` con Power BI Desktop y actualizar las fuentes de datos según la configuración local de SQL Server.
+- **RLS (Row-Level Security):** acceso dinámico según usuario, vendedor, supervisor y directora de ventas.
+- **Bookmarks:** navegación entre las diferentes vistas del dashboard.
+- **Drillthrough:** análisis detallado por vendedor.
+- **Tooltips personalizados:** información contextual adicional en los visuales.
+- **Modelo de fechas compartido:** evita depender de tablas de fecha automáticas independientes.
 
 ## Resultado
 
-El proyecto transforma datos operativos de ventas y gastos en información estructurada para apoyar el seguimiento del desempeño comercial. El dashboard permite analizar la evolución de las ventas, el rendimiento de vendedores y productos, los resultados por mercado y el comportamiento de los gastos mediante filtros y slicers interactivos.
-
 Desde una perspectiva de negocio, la solución facilita la identificación de tendencias, oportunidades y áreas que requieren atención, reduciendo la dependencia de análisis manuales y proporcionando una vista centralizada para la toma de decisiones.
-
-## Buenas prácticas aplicadas
-
-- Variables de configuración separadas mediante `.env`.
-- Exclusión de credenciales y archivos locales mediante `.gitignore`.
-- Validaciones de calidad antes de la carga.
-- Separación entre código Python, scripts SQL, datos y reportes.
-- Uso de consultas SQL reutilizables para análisis.
-- Estructura de repositorio orientada a reproducibilidad y mantenimiento.
+El proyecto está preparado para un entorno local de SQL Server y requiere un driver ODBC compatible con SQL Server.
 
 ## Enfoque de portafolio
-
-Este proyecto representa la primera pieza de una serie de proyectos **End-to-End** desarrollados para demostrar competencias prácticas en:
-
-**Data Engineering · Data Analytics · SQL · Python · Power BI · ETL · Data Quality**
-
-Los siguientes proyectos ampliarán el portafolio hacia análisis deportivos, un proyecto de analítica para un **BPO / Contact Center** y desarrollo de un sitio profesional mediante GitHub Pages.
+El proyecto busca demostrar competencias prácticas en:
+**ETL → Data Quality → SQL → Data Modeling → DAX → Power BI → BI & Decision Support**
 
 ## Autor
-
 **Fausto Xavier De León Pichardo**
-
+**Data Engineering · Data Analytics · SQL · Python · Power BI · ETL · Data Quality**
 Estudiante de Ingeniería en Sistemas de Computación, orientado al desarrollo de proyectos en **Data Analytics, Data Engineering y Business Intelligence**.
 
-**LinkedIn: https://www.linkedin.com/in/fausto-xavier-de-leon-pichardo-bi2026/**
+- GitHub: [FaustoDeLeon05](https://github.com/FaustoDeLeon05)
+- LinkedIn: [Fausto X. De León Pichardo](https://www.linkedin.com/in/fausto-xavier-de-leon-pichardo-bi2026/)
+
+## Licencia
+Este proyecto está disponible bajo la licencia **MIT**.
