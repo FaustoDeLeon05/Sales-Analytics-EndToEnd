@@ -9,7 +9,7 @@ El proyecto integra **Python, SQL Server y Power BI** en un proceso reproducible
 
 <p align="center">
 
-<img width="1545" height="872" alt="Executive Overview" src="https://github.com/user-attachments/assets/ec4aabe2-3f78-46e5-9d28-5a5ceb80be6f" />
+<img width="1627" height="917" alt="Executive Overview" src="https://github.com/user-attachments/assets/cc67e68a-bdfa-4a3d-8c7b-0d944087b3b2" />
 
 <img width="1540" height="877" alt="Sales Performance" src="https://github.com/user-attachments/assets/eed6d0ba-bfaa-4eac-9352-f5118dd8b490" />
 
