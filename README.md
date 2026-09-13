@@ -5,8 +5,22 @@ Proyecto de portafolio orientado a **análisis e ingeniería de datos**, constru
 
 El proyecto integra **Python, SQL Server y Power BI** en un proceso reproducible de extracción, transformación, validación, carga y análisis.
 
+## Vista previa de las páginas del reporte
+
 <p align="center">
-  <img width="1917" height="1197" alt="Dashboard de Ventas y Gastos" src="" />
+
+<img width="1545" height="872" alt="Executive Overview" src="https://github.com/user-attachments/assets/ec4aabe2-3f78-46e5-9d28-5a5ceb80be6f" />
+
+<img width="1540" height="877" alt="Sales Performance" src="https://github.com/user-attachments/assets/eed6d0ba-bfaa-4eac-9352-f5118dd8b490" />
+
+<img width="1545" height="881" alt="Expenses Analysis" src="https://github.com/user-attachments/assets/5246b7cf-d137-4fec-9c42-88f6e3cf7870" />
+
+<img width="1542" height="867" alt="Geographic Analysis" src="https://github.com/user-attachments/assets/98d289d5-30f4-4382-9c68-f6815a80c672" />
+
+<img width="1545" height="877" alt="Seller Analysis" src="https://github.com/user-attachments/assets/013f46cc-2faa-4f12-bc69-a960bd848def" />
+
+<img width="712" height="546" alt="Tooltip 1" src="https://github.com/user-attachments/assets/9211283b-ae7b-4540-a1a7-fd8d9b418801" />
+
 </p>
 
 ## Descripción del proyecto
